@@ -7,11 +7,12 @@
 <style>
 :root{--bg:#080806;--panel:#11100c;--panel2:#1a1710;--gold:#ffc928;--gold2:#ffe783;--text:#f7f3e8;--muted:#b9b2a0;--line:#49652b;--green:#a7f36a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif;background:radial-gradient(ellipse at top,#24351f 0,#090b08 36rem,#050605 100%);line-height:1.5}
-body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(180deg,rgba(5,8,5,.28),rgba(5,7,5,.40)),url('images/image5.jpg') center top/100% auto repeat-y;opacity:.92}
+body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(180deg,rgba(5,8,5,.14),rgba(5,7,5,.24)),url('images/image5.jpg') center top/100% auto repeat-y;opacity:1}
 :root{--bg:#080b08;--panel:#111610;--panel2:#1a2118;--gold:#b7f52a;--gold2:#dcff8a;--text:#f7f9f2;--muted:#b6c0ad;--line:#496126;--green:#b7f52a}
 .wrap{width:min(1120px,calc(100% - 28px));margin:auto}a{color:inherit;text-decoration:none}button,input{font:inherit}
 header{position:sticky;top:0;z-index:9;background:#080806eF;backdrop-filter:blur(12px);border-bottom:1px solid #334625}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:1000;letter-spacing:.06em}.crest{width:43px;height:46px;display:grid;place-items:center;background:linear-gradient(145deg,#d9ff74,#9ee51e);color:#130f04;clip-path:polygon(7% 0,93% 0,85% 78%,50% 100%,15% 78%);font-size:13px}.brand small{display:block;font-size:9px;color:var(--gold);letter-spacing:.18em}.navlinks{display:flex;gap:20px;font-size:11px;font-weight:900;color:#c9c0a8}.navlinks a:hover{color:var(--gold)}
-.hero{padding:48px 0 28px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:25px}.tag{display:inline-flex;border:1px solid #49652b;border-radius:99px;padding:6px 11px;color:var(--gold2);font-size:10px;font-weight:1000;letter-spacing:.17em}.crown{color:var(--gold);font-size:25px}h1{font-size:clamp(40px,7vw,76px);line-height:.9;letter-spacing:-.055em;margin:14px 0 12px;font-weight:1000}h1 span{color:var(--gold)}.subtitle{color:var(--gold);font-size:clamp(15px,2.7vw,23px);font-weight:1000;letter-spacing:.08em}.intro{color:var(--muted);font-size:14px;max-width:560px}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:8px;padding:11px 15px;font-size:12px;font-weight:1000;cursor:pointer}.primary{background:linear-gradient(135deg,#d9ff74,#9ee51e);color:#130e02}.secondary{background:#1b1810;border:1px solid #49652b;color:var(--text)}.hero-art{position:relative;min-height:340px;display:grid;place-items:center;overflow:hidden;border:1px solid #4d6634;border-radius:22px;background:linear-gradient(140deg,#182417,#080b08);box-shadow:0 24px 70px #0009}
+.hero-art{display:none!important}
+.hero{padding:48px 0 28px;display:grid;grid-template-columns:1fr;align-items:center;gap:25px}.tag{display:inline-flex;border:1px solid #49652b;border-radius:99px;padding:6px 11px;color:var(--gold2);font-size:10px;font-weight:1000;letter-spacing:.17em}.crown{color:var(--gold);font-size:25px}h1{font-size:clamp(40px,7vw,76px);line-height:.9;letter-spacing:-.055em;margin:14px 0 12px;font-weight:1000}h1 span{color:var(--gold)}.subtitle{color:var(--gold);font-size:clamp(15px,2.7vw,23px);font-weight:1000;letter-spacing:.08em}.intro{color:var(--muted);font-size:14px;max-width:560px}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:8px;padding:11px 15px;font-size:12px;font-weight:1000;cursor:pointer}.primary{background:linear-gradient(135deg,#d9ff74,#9ee51e);color:#130e02}.secondary{background:#1b1810;border:1px solid #49652b;color:var(--text)}.hero-art{display:none!important}
 .hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,4,.06),rgba(4,8,4,.18)),url('images/image4.jpg') center/cover no-repeat;opacity:1;transform:scale(1.02)}
 .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(4,8,4,.88) 100%);pointer-events:none}
 .hero-art .stadium,.hero-art .pitch{z-index:1;opacity:.28}.hero-art .art-label{z-index:3}.stadium{position:absolute;inset:0;background:repeating-radial-gradient(ellipse at 50% 115%,transparent 0 26px,#b7f52a0d 27px 29px,transparent 30px 46px)}.pitch{position:absolute;inset:22px;border:2px solid #b7f52a44;border-radius:8px}.pitch:before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:2px solid #b7f52a44}.pitch:after{content:"";position:absolute;width:80px;height:80px;border:2px solid #b7f52a44;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.ball{display:none}.art-label{position:absolute;bottom:34px;font-size:10px;letter-spacing:.22em;color:var(--gold2);font-weight:1000}.image-hint{position:absolute;bottom:12px;right:14px;z-index:3;font-size:8px;letter-spacing:.12em;color:#e8f5dcaa;font-weight:800}
@@ -19,7 +20,7 @@ header{position:sticky;top:0;z-index:9;background:#080806eF;backdrop-filter:blur
 section{padding:12px 0 34px;scroll-margin-top:84px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}.kicker{font-size:10px;color:var(--gold);letter-spacing:.2em;font-weight:1000}.section-head h2{font-size:clamp(25px,4vw,34px);letter-spacing:-.04em;margin:4px 0 0}.section-head p{font-size:11px;color:var(--muted);margin:0}
 .teams{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.team{border:1px solid #3c5429;border-radius:12px;padding:16px;background:linear-gradient(145deg,rgba(28,42,23,.94),rgba(10,13,9,.96));backdrop-filter:blur(8px);min-height:142px;position:relative;overflow:hidden}.team:after{content:"♛";position:absolute;right:8px;bottom:-28px;font-size:85px;color:#ffd34b0c}.team-num{font-size:9px;color:var(--gold);font-weight:1000;letter-spacing:.16em}.team h3{font-size:16px;line-height:1.1;margin:9px 0 8px}.team p{color:var(--muted);font-size:11px;margin:0}
 .fixtures{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.match{border:1px solid #4b6233;border-radius:12px;background:linear-gradient(110deg,rgba(25,36,21,.96),rgba(8,11,8,.97));padding:14px;display:grid;grid-template-columns:40px 1fr auto;gap:11px;align-items:center}.match-no{color:#080704;background:linear-gradient(145deg,#d9ff74,#9ee51e);font-size:10px;font-weight:1000;text-align:center;padding:8px 4px;border-radius:5px}.match-no strong{display:block;font-size:23px;line-height:1.1}.match-main{min-width:0}.day{font-size:9px;color:var(--gold);letter-spacing:.13em;font-weight:1000;margin-bottom:7px}.teamscore{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}.club{font-size:12px;font-weight:1000;line-height:1.2}.club.right{text-align:right}.vs{font-size:15px;font-weight:1000;color:var(--gold);font-style:italic}.scores{display:flex;align-items:center;gap:4px}.score{width:34px;height:36px;text-align:center;background:#080806;border:1px solid #49652b;border-radius:6px;color:white;font-weight:1000}.score:focus{outline:2px solid var(--gold)}.score:disabled{opacity:.9}.score-dash{color:var(--gold)}.duration{font-size:9px;color:var(--gold2);text-align:center;min-width:55px;font-weight:1000}.duration strong{font-size:17px;display:block}.status{font-size:10px;color:var(--muted);margin-top:6px;min-height:14px}
-.table-wrap{overflow-x:auto;border:1px solid #3c5429;border-radius:12px;background:#0d0c08}table{width:100%;border-collapse:collapse;min-width:610px}th,td{padding:12px 13px;border-bottom:1px solid #2c2514;font-size:11px}th{background:#1a160b;color:var(--gold);font-size:9px;letter-spacing:.12em;text-transform:uppercase}th:not(:nth-child(2)),td:not(:nth-child(2)){text-align:center}.rank{color:var(--gold);font-weight:1000}.pts{color:var(--gold2);font-weight:1000;font-size:15px}.teamcell{font-weight:900}tr:last-child td{border-bottom:0}.note{color:var(--muted);font-size:10px;margin-top:9px}
+.table-wrap{overflow-x:auto;border:1px solid #3c5429;border-radius:12px;background:#0d0c08}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:12px 13px;border-bottom:1px solid #2c2514;font-size:11px}th{background:#1a160b;color:var(--gold);font-size:9px;letter-spacing:.12em;text-transform:uppercase}th:not(:nth-child(2)),td:not(:nth-child(2)){text-align:center}.rank{color:var(--gold);font-weight:1000}.pts{color:var(--gold2);font-weight:1000;font-size:15px}.teamcell{font-weight:900}tr:last-child td{border-bottom:0}.note{color:var(--muted);font-size:10px;margin-top:9px}
 .rules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.rule{border:1px solid #3c5429;border-radius:12px;padding:17px;background:linear-gradient(145deg,#17140d,#0b0a07)}.rule-head{display:flex;gap:11px;align-items:center;margin-bottom:8px}.rule-num{background:linear-gradient(145deg,#d9ff74,#9ee51e);color:#100c02;font-weight:1000;font-size:19px;padding:4px 10px;transform:skew(-5deg)}.rule h3{margin:0;font-size:14px;color:var(--gold)}.rule p,.rule li{font-size:12px;color:#c8c0ad}.rule p{margin:0}.rule ul{padding-left:17px;margin:7px 0 0}.timing{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:7px;align-items:center;margin-top:12px}.timing div{border:1px solid #57451a;border-radius:8px;padding:9px 4px;text-align:center}.timing strong{display:block;font-size:22px;color:var(--gold)}.timing span{font-size:9px;color:var(--muted);font-weight:900}.timing i{color:var(--gold);font-style:normal}
 .admin{border:1px solid #3c5429;border-radius:12px;background:#141108;padding:15px;display:flex;gap:12px;align-items:end;flex-wrap:wrap}.fields{display:flex;gap:10px;flex:1;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:170px}.field label{font-size:9px;color:var(--muted);font-weight:1000;letter-spacing:.1em;text-transform:uppercase}.field input{padding:10px;border:1px solid #4b6233;background:#080806;color:white;border-radius:7px}.hidden{display:none!important}.statusline{font-size:11px;color:var(--muted);margin-top:9px}.statusline.good{color:var(--green)}.statusline.bad{color:#ff9292}.warning{border:1px solid #4b6233;border-radius:9px;padding:12px;color:#f4df9c;font-size:11px;margin-bottom:12px;background:#241d0a}
 
@@ -30,14 +31,62 @@ section{padding:12px 0 34px;scroll-margin-top:84px}.section-head{display:flex;ju
 .player-stat-input:disabled{opacity:1;background:transparent;border-color:transparent}
 .player-name{font-weight:900;white-space:nowrap}.player-team{color:var(--muted);font-size:11px}.player-rank{color:var(--gold);font-weight:1000}
 footer{border-top:1px solid #493914;padding:24px 0 32px;margin-top:10px;color:var(--muted);font-size:10px}.foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--gold);color:#100c02;padding:10px 14px;border-radius:8px;font-size:11px;font-weight:1000;transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:32px}.hero-art{min-height:280px}.teams{grid-template-columns:repeat(2,1fr)}.fixtures{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rules{grid-template-columns:1fr}.navlinks{gap:11px;font-size:10px}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:32px}.hero-art{display:none}.teams{grid-template-columns:repeat(2,1fr)}.fixtures{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rules{grid-template-columns:1fr}.navlinks{gap:11px;font-size:10px}}
 @media(max-width:450px){.wrap{width:calc(100% - 20px)}.nav{height:62px}.brand{font-size:11px}.crest{width:36px;height:39px}.navlinks{gap:8px}.navlinks a{font-size:9px}.match{grid-template-columns:34px 1fr auto;gap:7px;padding:10px}.match-no strong{font-size:20px}.club{font-size:10px}.teamscore{gap:4px}.score{width:29px;height:32px}.duration{min-width:42px;font-size:8px}.duration strong{font-size:14px}.section-head{align-items:start;flex-direction:column}.timing{gap:4px}.timing strong{font-size:19px}}
+
+/* Match Centre, form, badges and Player of the Match */
+.match-tools{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.match-tools select,.match-tools button{border:1px solid #496126;border-radius:8px;background:#10160d;color:var(--text);padding:10px 12px;font-size:11px;font-weight:900}
+.match-tools button.active{background:var(--gold);color:#111}
+.match-count{margin-left:auto;color:var(--muted);font-size:10px}
+.match-card{border:1px solid #3d542c;border-radius:14px;background:linear-gradient(135deg,rgba(18,27,15,.94),rgba(6,9,6,.96));overflow:hidden}
+.match-card-top{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:10px;align-items:center;padding:14px}
+.match-card .match-main{min-width:0}
+.match-card .scoreboard{display:flex;align-items:center;gap:7px;font-size:24px;font-weight:1000}
+.match-card .scoreboard .dash{color:var(--gold)}
+.match-card .scoreboard .pending{font-size:12px;color:var(--muted)}
+.match-card .match-teams{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:7px;align-items:center}
+.clubline{display:flex;align-items:center;gap:7px;min-width:0;font-size:11px;font-weight:1000}
+.clubline.right{justify-content:flex-end;text-align:right}
+.team-badge{display:inline-grid;place-items:center;flex:0 0 29px;width:29px;height:29px;border-radius:50%;background:linear-gradient(145deg,#d9ff74,#8edb14);color:#101609;border:2px solid #eaffbd;font-size:8px;font-weight:1000;box-shadow:0 0 0 3px #b7f52a15}
+.clubline .team-name{overflow-wrap:anywhere}
+.match-card-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.mini-btn{border:1px solid #496126;background:#11170e;color:var(--text);border-radius:7px;padding:7px 9px;font-size:9px;font-weight:1000;cursor:pointer}
+.scorecard{display:none;border-top:1px solid #344725;padding:13px 14px;background:#080c07}
+.scorecard.open{display:block}
+.scorecard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.scorecard-stat{padding:10px;border:1px solid #2e4223;border-radius:8px;text-align:center}
+.scorecard-stat strong{display:block;font-size:19px;color:var(--gold)}
+.scorecard-stat span{font-size:9px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.match-result-label{font-size:10px;color:var(--gold2);margin-top:9px}
+.leader-row td{background:linear-gradient(90deg,#b7f52a16,#b7f52a05)}
+.leader-row td:first-child{border-left:3px solid var(--gold)}
+.teamcell-wrap{display:flex;align-items:center;gap:9px;text-align:left}
+.form-list{display:inline-flex;gap:3px;align-items:center}
+.form-dot{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:5px;font-size:9px;font-weight:1000}
+.form-W{background:#245b31;color:#c8ffd0}.form-D{background:#5c5123;color:#fff0a3}.form-L{background:#632a2a;color:#ffd0d0}.form-N{background:#283024;color:#899486}
+.pom-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pom-card{position:relative;overflow:hidden;display:grid;grid-template-columns:100px minmax(0,1fr);min-height:138px;border:1px solid #496126;border-radius:14px;background:linear-gradient(135deg,rgba(26,39,20,.96),rgba(7,10,7,.97))}
+.pom-photo{width:100px;height:100%;min-height:138px;object-fit:cover;background:radial-gradient(circle at 50% 30%,#5d7738,#11190d);display:grid;place-items:center;color:#d9ff74;font-size:29px;font-weight:1000}
+.pom-initials{display:grid;place-items:center;width:100%;height:100%;min-height:138px;background:radial-gradient(circle at 50% 30%,#5d7738,#11190d);font-size:28px;font-weight:1000;color:#d9ff74}
+.pom-content{padding:13px;min-width:0}
+.pom-label{font-size:9px;letter-spacing:.15em;color:var(--gold);font-weight:1000}
+.pom-content h3{font-size:16px;margin:5px 0 2px;overflow-wrap:anywhere}
+.pom-content p{font-size:10px;color:var(--muted);margin:0 0 8px}
+.pom-stats{display:flex;gap:12px;flex-wrap:wrap;font-size:10px;font-weight:900}
+.pom-stats strong{color:var(--gold);font-size:14px}
+.pom-admin{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.pom-admin select{max-width:100%;min-width:0;background:#0a0f08;color:var(--text);border:1px solid #496126;border-radius:7px;padding:8px;font-size:10px}
+.pom-empty{padding:18px;border:1px dashed #496126;border-radius:12px;color:var(--muted);font-size:11px}
+@media(max-width:700px){.pom-grid{grid-template-columns:1fr}.match-count{margin-left:0;width:100%}.match-card-top{grid-template-columns:34px minmax(0,1fr);gap:8px}.match-card-top>.match-card-actions{grid-column:1/-1;justify-content:flex-end}.match-card .match-teams{gap:4px}.clubline{font-size:10px;gap:4px}.team-badge{width:25px;height:25px;flex-basis:25px;font-size:7px}.scorecard-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:420px){.match-tools select{flex:1;min-width:135px}.pom-card{grid-template-columns:82px minmax(0,1fr)}.pom-photo{width:82px}.pom-content{padding:10px}.pom-content h3{font-size:14px}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home"><div class="crest">SSL</div><div>SUNDAY SUPER LEAGUE<small>SEASON 2 · OFFICIAL LEAGUE HUB</small></div></a><nav class="navlinks"><a href="#teams">TEAMS</a><a href="#fixtures">FIXTURES</a><a href="#table">TABLE</a><a href="#player-stats">PLAYERS</a><a href="#rules">RULES</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#home"><div class="crest">SSL</div><div>SUNDAY SUPER LEAGUE<small>SEASON 2 · OFFICIAL LEAGUE HUB</small></div></a><nav class="navlinks"><a href="#teams">TEAMS</a><a href="#fixtures">MATCH CENTRE</a><a href="#table">TABLE</a><a href="#player-stats">PLAYERS</a><a href="#player-of-match">POTM</a><a href="#rules">RULES</a></nav></div></header>
 <main class="wrap">
-<div class="hero" id="home"><div><div class="tag">♛ &nbsp; SAME PASSION · NEW SEASON</div><div class="crown">♛</div><h1>SSL<br><span>SEASON 2</span></h1><div class="subtitle">SUNDAY SUPER LEAGUE</div><p class="intro">One league. Four teams. One dream. Follow Week 1 fixtures, record match scores, and track the race for a place in the finals.</p><div class="hero-actions"><a class="btn primary" href="#fixtures">VIEW WEEK 1 FIXTURES ↓</a><a class="btn secondary" href="#table">LEAGUE TABLE</a></div></div><div class="hero-art" role="img" aria-label="Football player action background"><div class="stadium"></div><div class="pitch"></div><div class="art-label">PLAY HARD · RESPECT THE GAME</div><div class="image-hint"> /images</div></div></div>
+<div class="hero" id="home"><div><div class="tag">♛ &nbsp; SAME PASSION · NEW SEASON</div><div class="crown">♛</div><h1>SSL<br><span>SEASON 2</span></h1><div class="subtitle">SUNDAY SUPER LEAGUE</div><p class="intro">One league. Four teams. One dream. Follow Week 1 fixtures, record match scores, and track the race for a place in the finals.</p><div class="hero-actions"><a class="btn primary" href="#fixtures">VIEW WEEK 1 FIXTURES ↓</a><a class="btn secondary" href="#table">LEAGUE TABLE</a></div></div></div>
 <div class="stats"><div class="stat"><strong>04</strong><span>Teams</span></div><div class="stat"><strong>08</strong><span>Matches per team</span></div><div class="stat"><strong>15′</strong><span>Each match</span></div><div class="stat"><strong id="playedCount">00 / 06</strong><span>Week 1 results entered</span></div></div>
 <section id="teams"><div class="section-head"><div><div class="kicker">The contenders</div><h2>Meet the teams</h2></div><p>Season 2 · Four teams · One dream</p></div><div class="teams">
 <div class="team"><div class="team-num">TEAM 01</div><h3>🐐 GOAT FC</h3><p>Jack · Jeswin · Christopher · Praveen · Antony · Manoj</p></div>
@@ -45,14 +94,23 @@ footer{border-top:1px solid #493914;padding:24px 0 32px;margin-top:10px;color:va
 <div class="team"><div class="team-num">TEAM 03</div><h3>⚽ CR7 UNITED FC</h3><p>Naldo · Infant · Robin · Pratap · Sandro · Anto</p></div>
 <div class="team"><div class="team-num">TEAM 04</div><h3>☠️ STAW HAT FC</h3><p>Rohan · Aravind · Simon · Naveen · Aaron · John</p></div>
 </div></section>
-<section id="fixtures"><div class="section-head"><div><div class="kicker">League stage · Week 1</div><h2>Fixtures & results</h2></div><p>15 minutes per match · Enter scores as admin</p></div>
+<section id="fixtures"><div class="section-head"><div><div class="kicker">Matchday dashboard · Week 1</div><h2>Match Centre</h2></div><p>Filter fixtures, check results and open scorecards.</p></div>
 <div id="configWarning" class="warning">Shared live scores are not connected yet. Set up Firebase using the included README.txt to let all players see the same results.</div>
+<div class="match-tools">
+<select id="matchFilter" aria-label="Filter matches"><option value="all">All matches</option><option value="upcoming">Upcoming fixtures</option><option value="recent">Recent results</option></select>
+<select id="teamFilter" aria-label="Filter by team"><option value="all">All teams</option><option>GOAT FC</option><option>18+ UNITED FC</option><option>CR7 UNITED FC</option><option>STAW HAT FC</option></select>
+<span class="match-count" id="matchCount">6 matches</span>
+</div>
 <div class="fixtures" id="fixturesGrid"></div><div class="hero-actions"><button class="btn primary" id="copyBtn">COPY FIXTURES & TABLE</button><button class="btn secondary hidden" id="resetBtn">RESET WEEK 1 SCORES</button></div>
 </section>
-<section id="table"><div class="section-head"><div><div class="kicker">League stage</div><h2>Live league table</h2></div><p>Top 2 teams qualify directly for the finals.</p></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead><tbody id="tableBody"></tbody></table></div><p class="note">P Played · W Won · D Drawn · L Lost · GF Goals For · GA Goals Against · GD Goal Difference. This table currently tracks the six Week 1 fixtures shown in the official fixture poster. Season totals will need the remaining fixtures added to track all 8 matches per team.</p></section>
+<section id="table"><div class="section-head"><div><div class="kicker">League stage</div><h2>Live league table</h2></div><p>Top 2 teams qualify directly for the finals.</p></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Team</th><th>Form</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead><tbody id="tableBody"></tbody></table></div><p class="note">P Played · W Won · D Drawn · L Lost · GF Goals For · GA Goals Against · GD Goal Difference. This table currently tracks the six Week 1 fixtures shown in the official fixture poster. Season totals will need the remaining fixtures added to track all 8 matches per team.</p></section>
 <section id="player-stats"><div class="section-head"><div><div class="kicker">Individual performance</div><h2>Goals & assists leaderboard</h2></div><p>Track every player’s contribution throughout the season.</p></div>
 <p class="note">The authorised scorekeeper can edit goals and assists after signing in. Statistics are shared through Firebase when connected.</p>
 <div class="player-table-wrap"><table class="player-table"><thead><tr><th>#</th><th>Player</th><th>Team</th><th>Goals scored</th><th>Assists</th></tr></thead><tbody id="playerStatsBody"></tbody></table></div></section>
+
+<section id="player-of-match"><div class="section-head"><div><div class="kicker">Matchday awards</div><h2>Player of the Match</h2></div><p>Celebrate standout performances after every match.</p></div>
+<p class="note">Admins can select the award winner for each completed match. Add a player portrait as <code>images/players/player-name.jpg</code> (lowercase, hyphenated) to show their photo.</p>
+<div class="pom-grid" id="pomGrid"></div></section>
 
 <section id="rules"><div class="section-head"><div><div class="kicker">Official rules</div><h2>Rules & regulations</h2></div><p>Sunday Super League · Season 2</p></div><div class="rules">
 <div class="rule"><div class="rule-head"><div class="rule-num">1</div><h3>League stage</h3></div><p>Each team plays 8 matches during the league stage.</p></div>
@@ -92,6 +150,7 @@ const playerRoster=[
 {name:"Naldo",team:"CR7 UNITED FC"},{name:"Infant",team:"CR7 UNITED FC"},{name:"Robin",team:"CR7 UNITED FC"},{name:"Pratap",team:"CR7 UNITED FC"},{name:"Sandro",team:"CR7 UNITED FC"},{name:"Anto",team:"CR7 UNITED FC"},
 {name:"Rohan",team:"STAW HAT FC"},{name:"Aravind",team:"STAW HAT FC"},{name:"Simon",team:"STAW HAT FC"},{name:"Naveen",team:"STAW HAT FC"},{name:"Aaron",team:"STAW HAT FC"},{name:"John",team:"STAW HAT FC"}];
 let playerStats=playerRoster.map((p,i)=>({...p,id:i+1,goals:0,assists:0}));
+let pomByMatch={};
 const initial=[
 {id:1,day:"MATCH 1",home:teams[0],away:teams[1],hg:"",ag:""},
 {id:2,day:"MATCH 2",home:teams[2],away:teams[3],hg:"",ag:""},
@@ -105,12 +164,60 @@ const grid=document.getElementById("fixturesGrid"),tbody=document.getElementById
 function say(msg,kind=""){const el=document.getElementById("connectionStatus");el.textContent=msg;el.className="statusline "+kind}
 function pop(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1700)}
 function clean(v){return v===""?"":String(Math.max(0,Math.min(99,parseInt(v,10)||0)))}
-function renderFixtures(){grid.innerHTML="";matches.forEach(m=>{const el=document.createElement("article");el.className="match";el.innerHTML=`<div class="match-no">MATCH<strong>${m.id}</strong></div><div class="match-main"><div class="day">LEAGUE STAGE · WEEK 1</div><div class="teamscore"><div class="club">${m.home}</div><div class="vs">VS</div><div class="club right">${m.away}</div></div><div class="status" id="status-${m.id}"></div></div><div><div class="scores"><input class="score" inputmode="numeric" maxlength="2" aria-label="${m.home} score" placeholder="–" value="${m.hg}" data-id="${m.id}" data-field="hg" ${isAdmin?"":"disabled"}><span class="score-dash">:</span><input class="score" inputmode="numeric" maxlength="2" aria-label="${m.away} score" placeholder="–" value="${m.ag}" data-id="${m.id}" data-field="ag" ${isAdmin?"":"disabled"}></div><div class="duration"><strong>15 MIN</strong>EACH MATCH</div></div>`;grid.appendChild(el)});
-grid.querySelectorAll("input.score").forEach(input=>input.addEventListener("change",async e=>{if(!isAdmin||!db)return;const m=matches.find(x=>x.id===Number(e.target.dataset.id));m[e.target.dataset.field]=clean(e.target.value);e.target.value=m[e.target.dataset.field];renderTable();updateStats();updateStatuses();try{await set(ref(db,"league/matches"),matches.map(x=>({id:x.id,hg:x.hg,ag:x.ag})));pop("Scores synced live");}catch(err){say("Could not save scores: "+err.message,"bad")}}));updateStatuses()}
-function standings(){const d=teams.map(team=>({team,p:0,w:0,dr:0,l:0,gf:0,ga:0,played:0}));matches.forEach(m=>{if(m.hg===""||m.ag==="")return;let h=+m.hg,a=+m.ag,H=d.find(x=>x.team===m.home),A=d.find(x=>x.team===m.away);H.played++;A.played++;H.gf+=h;H.ga+=a;A.gf+=a;A.ga+=h;if(h>a){H.w++;H.p+=3;A.l++}else if(h<a){A.w++;A.p+=3;H.l++}else{H.dr++;A.dr++;H.p++;A.p++}});return d.map(x=>({...x,gd:x.gf-x.ga})).sort((a,b)=>b.p-a.p||b.gd-a.gd||b.gf-a.gf)}
-function renderTable(){tbody.innerHTML="";standings().forEach((s,i)=>{const tr=document.createElement("tr");tr.innerHTML=`<td class="rank">${i+1}</td><td class="teamcell">${s.team}</td><td>${s.played}</td><td>${s.w}</td><td>${s.dr}</td><td>${s.l}</td><td>${s.gf}</td><td>${s.ga}</td><td>${s.gd>0?"+"+s.gd:s.gd}</td><td class="pts">${s.p}</td>`;tbody.appendChild(tr)})}
+function initials(team){return team.split(/\s+/).filter(Boolean).map(w=>w[0]).join("").slice(0,3)}
+function isPlayed(m){return m.hg!==""&&m.ag!==""}
+function resultFor(team,m){if(!isPlayed(m))return "";const h=Number(m.hg),a=Number(m.ag);if(h===a)return "D";return ((m.home===team&&h>a)||(m.away===team&&a>h))?"W":"L"}
+function teamForm(team){return matches.filter(m=>(m.home===team||m.away===team)&&isPlayed(m)).sort((a,b)=>a.id-b.id).slice(-5).map(m=>resultFor(team,m))}
+function renderFixtures(){
+ const grid=document.getElementById("fixturesGrid");grid.innerHTML="";
+ const filter=document.getElementById("matchFilter")?.value||"all",teamFilter=document.getElementById("teamFilter")?.value||"all";
+ let list=[...matches].sort((a,b)=>a.id-b.id);
+ if(filter==="upcoming")list=list.filter(m=>!isPlayed(m));
+ if(filter==="recent")list=list.filter(isPlayed).reverse();
+ if(teamFilter!=="all")list=list.filter(m=>m.home===teamFilter||m.away===teamFilter);
+ document.getElementById("matchCount").textContent=`${list.length} ${list.length===1?"match":"matches"}`;
+ if(!list.length){grid.innerHTML='<div class="pom-empty">No matches match these filters yet. Try another team or view all matches.</div>';return}
+ list.forEach(m=>{
+  const played=isPlayed(m),status=played?(Number(m.hg)>Number(m.ag)?`${m.home} WON`:Number(m.hg)<Number(m.ag)?`${m.away} WON`:"MATCH DRAWN"):"Upcoming fixture";
+  const card=document.createElement("article");card.className="match-card";
+  const leftScore=played?m.hg:"–",rightScore=played?m.ag:"–";
+  card.innerHTML=`<div class="match-card-top"><div class="match-no">MATCH<strong>${m.id}</strong></div><div class="match-main"><div class="day">LEAGUE STAGE · WEEK 1</div><div class="match-teams"><div class="clubline"><span class="team-badge">${initials(m.home)}</span><span class="team-name">${m.home}</span></div><span class="vs">VS</span><div class="clubline right"><span class="team-name">${m.away}</span><span class="team-badge">${initials(m.away)}</span></div></div><div class="match-result-label">${status}</div></div><div class="match-card-actions"><div class="scoreboard">${isAdmin?`<input class="score" inputmode="numeric" maxlength="2" aria-label="${m.home} score" placeholder="–" value="${m.hg}" data-id="${m.id}" data-field="hg">`:`<span>${leftScore}</span>`}<span class="dash">:</span>${isAdmin?`<input class="score" inputmode="numeric" maxlength="2" aria-label="${m.away} score" placeholder="–" value="${m.ag}" data-id="${m.id}" data-field="ag">`:`<span>${rightScore}</span>`}</div><button class="mini-btn scorecard-toggle" data-match="${m.id}">SCORECARD ↓</button></div></div><div class="scorecard" id="scorecard-${m.id}"><div class="scorecard-grid"><div class="scorecard-stat"><strong>${played?Number(m.hg)+Number(m.ag):"—"}</strong><span>Total goals</span></div><div class="scorecard-stat"><strong>${played?(Number(m.hg)>Number(m.ag)?m.home:Number(m.hg)<Number(m.ag)?m.away:"Draw"):"TBD"}</strong><span>Result</span></div><div class="scorecard-stat"><strong>15 min</strong><span>Match time</span></div></div><p class="match-result-label">${played?`${m.home} ${m.hg} – ${m.ag} ${m.away}`:"Scorecard will update after the match result is entered."}</p><div class="pom-admin" ${isAdmin&&played?"":"hidden"}><label for="pom-select-${m.id}" class="note">Player of the Match</label><select id="pom-select-${m.id}" class="pom-select" data-match="${m.id}"><option value="">Choose player…</option>${playerRoster.map(p=>`<option value="${p.id}" ${Number(pomByMatch[m.id])===p.id?"selected":""}>${p.name} · ${p.team}</option>`).join("")}</select><button class="mini-btn save-pom" data-match="${m.id}">SAVE AWARD</button></div></div>`;
+  grid.appendChild(card);
+ });
+ grid.querySelectorAll(".scorecard-toggle").forEach(btn=>btn.addEventListener("click",()=>{const panel=document.getElementById(`scorecard-${btn.dataset.match}`);const open=panel.classList.toggle("open");btn.textContent=open?"HIDE SCORECARD ↑":"SCORECARD ↓"}));
+ grid.querySelectorAll("input.score").forEach(input=>input.addEventListener("change",async e=>{if(!isAdmin||!db)return;const m=matches.find(x=>x.id===Number(e.target.dataset.id));if(!m)return;m[e.target.dataset.field]=clean(e.target.value);e.target.value=m[e.target.dataset.field];try{await set(ref(db,"league/matches"),matches.map(x=>({id:x.id,hg:x.hg,ag:x.ag})));all();pop("Scores synced live")}catch(err){say("Could not save scores: "+err.message,"bad")}}));
+ grid.querySelectorAll(".save-pom").forEach(btn=>btn.addEventListener("click",async()=>{if(!isAdmin||!db)return;const sel=document.getElementById(`pom-select-${btn.dataset.match}`);const id=sel.value?Number(sel.value):null;if(id===null)delete pomByMatch[btn.dataset.match];else pomByMatch[btn.dataset.match]=id;try{await set(ref(db,"league/playerOfMatch"),pomByMatch);renderPom();pop("Player of the Match saved")}catch(err){say("Could not save award: "+err.message,"bad")}}));
+ updateStatuses();
+}
+function standings(){
+ const d=teams.map(team=>({team,p:0,w:0,dr:0,l:0,gf:0,ga:0,played:0}));
+ matches.forEach(m=>{if(!isPlayed(m))return;let h=+m.hg,a=+m.ag,H=d.find(x=>x.team===m.home),A=d.find(x=>x.team===m.away);H.played++;A.played++;H.gf+=h;H.ga+=a;A.gf+=a;A.ga+=h;if(h>a){H.w++;H.p+=3;A.l++}else if(h<a){A.w++;A.p+=3;H.l++}else{H.dr++;A.dr++;H.p++;A.p++}});
+ return d.map(x=>({...x,gd:x.gf-x.ga,form:teamForm(x.team)})).sort((a,b)=>b.p-a.p||b.gd-a.gd||b.gf-a.gf)
+}
+function renderTable(){
+ tbody.innerHTML="";const table=standings();
+ table.forEach((s,i)=>{const tr=document.createElement("tr");if(i===0&&s.played>0)tr.classList.add("leader-row");
+ const form=s.form.length?s.form.map(v=>`<span class="form-dot form-${v}" title="${v==="W"?"Win":v==="D"?"Draw":"Loss"}">${v}</span>`).join(""):'<span class="form-dot form-N">—</span>';
+ tr.innerHTML=`<td class="rank">${i===0&&s.played>0?"👑":i+1}</td><td class="teamcell"><div class="teamcell-wrap"><span class="team-badge">${initials(s.team)}</span><span>${s.team}${i===0&&s.played>0?'<small style="display:block;color:var(--gold);font-size:8px;letter-spacing:.1em">LEAGUE LEADER</small>':""}</span></div></td><td><span class="form-list">${form}</span></td><td>${s.played}</td><td>${s.w}</td><td>${s.dr}</td><td>${s.l}</td><td>${s.gf}</td><td>${s.ga}</td><td>${s.gd>0?"+"+s.gd:s.gd}</td><td class="pts">${s.p}</td>`;
+ tbody.appendChild(tr)
+ })
+}
+function updateStatuses(){/* Match status labels are rendered inside Match Centre cards. */}
 function updateStats(){document.getElementById("playedCount").textContent=String(matches.filter(m=>m.hg!==""&&m.ag!=="").length).padStart(2,"0")+" / 06"}
 function updateStatuses(){matches.forEach(m=>{const el=document.getElementById("status-"+m.id);if(!el)return;if(m.hg===""||m.ag===""){el.textContent="Awaiting result";el.style.color="";return}const h=+m.hg,a=+m.ag;el.textContent=h>a?m.home+" WON":h<a?m.away+" WON":"MATCH DRAWN";el.style.color=h===a?"#d9ff74":"#a7f36a"})}
+function renderPom(){
+ const grid=document.getElementById("pomGrid");if(!grid)return;grid.innerHTML="";
+ const awards=matches.filter(m=>isPlayed(m)&&pomByMatch[m.id]).map(m=>({match:m,player:playerRoster.find(p=>p.id===Number(pomByMatch[m.id]))})).filter(x=>x.player);
+ if(!awards.length){grid.innerHTML='<div class="pom-empty">No awards yet. Once a match has a result, sign in as admin, open its scorecard and select the Player of the Match.</div>';return}
+ awards.sort((a,b)=>b.match.id-a.match.id).forEach(({match,player})=>{
+  const stats=playerStats.find(p=>p.id===player.id)||{goals:0,assists:0};
+  const slug=player.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const card=document.createElement("article");card.className="pom-card";
+  card.innerHTML=`<img class="pom-photo" src="images/players/${slug}.jpg" alt="${player.name}" onerror="this.outerHTML='<div class=&quot;pom-initials&quot;>${initials(player.name)}</div>'"><div class="pom-content"><div class="pom-label">PLAYER OF THE MATCH · MATCH ${match.id}</div><h3>${player.name}</h3><p>${player.team} · ${match.home} ${match.hg}–${match.ag} ${match.away}</p><div class="pom-stats"><span><strong>${stats.goals}</strong> Goals</span><span><strong>${stats.assists}</strong> Assists</span></div></div>`;
+  grid.appendChild(card)
+ })
+}
+
 function renderPlayerStats(){
 const body=document.getElementById("playerStatsBody");if(!body)return;
 const ordered=[...playerStats].sort((a,b)=>b.goals-a.goals||b.assists-a.assists||a.name.localeCompare(b.name));
@@ -125,14 +232,16 @@ try{await set(ref(db,"league/playerStats"),playerStats.map(x=>({id:x.id,name:x.n
 catch(err){say("Could not save player stats: "+err.message,"bad")}
 }));
 }
-function all(){renderFixtures();renderTable();updateStats();renderPlayerStats()}
+function all(){renderFixtures();renderTable();updateStats();renderPlayerStats();renderPom()}
 function adminMode(v){isAdmin=v;document.getElementById("loginBtn").classList.toggle("hidden",v);document.getElementById("logoutBtn").classList.toggle("hidden",!v);document.getElementById("adminEmail").disabled=v;document.getElementById("adminPassword").disabled=v;all();document.getElementById("resetBtn").classList.toggle("hidden",!v)}
+document.getElementById("matchFilter").addEventListener("change",renderFixtures);document.getElementById("teamFilter").addEventListener("change",renderFixtures);
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("loginBtn").addEventListener("click",async()=>{if(!configured){say("Firebase not configured. Follow README.txt first.","bad");return}const email=document.getElementById("adminEmail").value.trim(),password=document.getElementById("adminPassword").value;if(!email||!password){say("Enter admin email and password.","bad");return}try{await signInWithEmailAndPassword(auth,email,password);say("Signed in. Score editing is enabled.","good")}catch(e){say("Sign-in failed: "+(e.code||e.message),"bad")}});
 document.getElementById("logoutBtn").addEventListener("click",async()=>{try{await signOut(auth)}catch(e){say("Sign out failed","bad")}});
 document.getElementById("resetBtn").addEventListener("click",async()=>{if(!isAdmin||!db||!confirm("Reset all Week 1 scores for everyone?"))return;matches=initial.map(x=>({...x}));try{await set(ref(db,"league/matches"),matches.map(x=>({id:x.id,hg:"",ag:""})));pop("Week 1 scores reset")}catch(e){say("Reset failed: "+e.message,"bad")}});
 document.getElementById("copyBtn").addEventListener("click",async()=>{const lines=["SSL — SUNDAY SUPER LEAGUE — SEASON 2","LEAGUE STAGE · WEEK 1",...matches.map(m=>`Match ${m.id}: ${m.home} ${m.hg===""?"-":m.hg} - ${m.ag===""?"-":m.ag} ${m.away}`),"","LEAGUE TABLE","Pos | Team | P | W | D | L | GF | GA | GD | Pts",...standings().map((s,i)=>`${i+1} | ${s.team} | ${s.played} | ${s.w} | ${s.dr} | ${s.l} | ${s.gf} | ${s.ga} | ${s.gd} | ${s.p}`)];try{await navigator.clipboard.writeText(lines.join("\n"));pop("Fixtures and table copied")}catch(e){const t=document.createElement("textarea");t.value=lines.join("\n");document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();pop("Copied")}});
 if(!configured){document.getElementById("resetBtn").classList.add("hidden");say("Firebase not connected yet. See README.txt for setup.","bad");all()}else{try{const app=initializeApp(firebaseConfig);db=getDatabase(app);auth=getAuth(app);document.getElementById("configWarning").classList.add("hidden");say("Connecting to shared scores…");onValue(ref(db,"league/matches"),snap=>{const data=snap.val();if(Array.isArray(data))matches=initial.map(m=>{const s=data.find(x=>x&&Number(x.id)===m.id);return s?{...m,hg:clean(s.hg??""),ag:clean(s.ag??"")}:m});all();say("Connected to shared live scores.","good")},err=>say("Database connection failed: "+err.message,"bad"));
-onValue(ref(db,"league/playerStats"),snap=>{const data=snap.val();if(Array.isArray(data))playerStats=playerRoster.map(p=>{const s=data.find(x=>x&&Number(x.id)===p.id);return {...p,goals:Math.max(0,Number(s?.goals)||0),assists:Math.max(0,Number(s?.assists)||0)}});renderPlayerStats()},err=>say("Player stats connection failed: "+err.message,"bad"));onAuthStateChanged(auth,user=>{adminMode(!!user);say(user?"Signed in as scorekeeper. Changes sync to everyone.":"Live scores are public. Sign in to edit.","good")})}catch(e){say("Firebase configuration error: "+e.message,"bad")}}
+onValue(ref(db,"league/playerStats"),snap=>{const data=snap.val();if(Array.isArray(data))playerStats=playerRoster.map(p=>{const s=data.find(x=>x&&Number(x.id)===p.id);return {...p,goals:Math.max(0,Number(s?.goals)||0),assists:Math.max(0,Number(s?.assists)||0)}});renderPlayerStats()},err=>say("Player stats connection failed: "+err.message,"bad"));
+onValue(ref(db,"league/playerOfMatch"),snap=>{pomByMatch=snap.val()||{};renderPom();renderFixtures()},err=>say("Player of the Match connection failed: "+err.message,"bad"));onAuthStateChanged(auth,user=>{adminMode(!!user);say(user?"Signed in as scorekeeper. Changes sync to everyone.":"Live scores are public. Sign in to edit.","good")})}catch(e){say("Firebase configuration error: "+e.message,"bad")}}
 </script>
 </body></html>
