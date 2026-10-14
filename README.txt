@@ -37,7 +37,7 @@ The site uses Firebase Realtime Database + Firebase Authentication. The HTML is 
   "rules": {
     "league": {
       ".read": true,
-      ".write": "auth != null && auth.uid === 'REPLACE_WITH_ADMIN_UID'"
+      ".write": "auth != null && auth.uid === 'ny8hc7DVDoZwqbuLQiSEa1RENiH2'"
     }
   }
 }
