@@ -148,8 +148,9 @@ const playerRoster=[
 {name:"Jack",team:"GOAT FC"},{name:"Jeswin",team:"GOAT FC"},{name:"Christopher",team:"GOAT FC"},{name:"Praveen",team:"GOAT FC"},{name:"Antony",team:"GOAT FC"},{name:"Manoj",team:"GOAT FC"},
 {name:"Fabian",team:"18+ UNITED FC"},{name:"Anish",team:"18+ UNITED FC"},{name:"Donaldo",team:"18+ UNITED FC"},{name:"Andrew",team:"18+ UNITED FC"},{name:"Alphonse",team:"18+ UNITED FC"},{name:"Thomas",team:"18+ UNITED FC"},
 {name:"Naldo",team:"CR7 UNITED FC"},{name:"Infant",team:"CR7 UNITED FC"},{name:"Robin",team:"CR7 UNITED FC"},{name:"Pratap",team:"CR7 UNITED FC"},{name:"Sandro",team:"CR7 UNITED FC"},{name:"Anto",team:"CR7 UNITED FC"},
-{name:"Rohan",team:"STAW HAT FC"},{name:"Aravind",team:"STAW HAT FC"},{name:"Simon",team:"STAW HAT FC"},{name:"Naveen",team:"STAW HAT FC"},{name:"Aaron",team:"STAW HAT FC"},{name:"John",team:"STAW HAT FC"}];
-let playerStats=playerRoster.map((p,i)=>({...p,id:i+1,goals:0,assists:0}));
+{name:"Rohan",team:"STAW HAT FC"},{name:"Aravind",team:"STAW HAT FC"},{name:"Simon",team:"STAW HAT FC"},{name:"Naveen",team:"STAW HAT FC"},{name:"Aaron",team:"STAW HAT FC"},{name:"John",team:"STAW HAT FC"}
+].map((p,i)=>({...p,id:i+1}));
+let playerStats=playerRoster.map(p=>({...p,goals:0,assists:0}));
 let pomByMatch={};
 const initial=[
 {id:1,day:"MATCH 1",home:teams[0],away:teams[1],hg:"",ag:""},
@@ -186,7 +187,22 @@ function renderFixtures(){
  });
  grid.querySelectorAll(".scorecard-toggle").forEach(btn=>btn.addEventListener("click",()=>{const panel=document.getElementById(`scorecard-${btn.dataset.match}`);const open=panel.classList.toggle("open");btn.textContent=open?"HIDE SCORECARD ↑":"SCORECARD ↓"}));
  grid.querySelectorAll("input.score").forEach(input=>input.addEventListener("change",async e=>{if(!isAdmin||!db)return;const m=matches.find(x=>x.id===Number(e.target.dataset.id));if(!m)return;m[e.target.dataset.field]=clean(e.target.value);e.target.value=m[e.target.dataset.field];try{await set(ref(db,"league/matches"),matches.map(x=>({id:x.id,hg:x.hg,ag:x.ag})));all();pop("Scores synced live")}catch(err){say("Could not save scores: "+err.message,"bad")}}));
- grid.querySelectorAll(".save-pom").forEach(btn=>btn.addEventListener("click",async()=>{if(!isAdmin||!db)return;const sel=document.getElementById(`pom-select-${btn.dataset.match}`);const id=sel.value?Number(sel.value):null;if(id===null)delete pomByMatch[btn.dataset.match];else pomByMatch[btn.dataset.match]=id;try{await set(ref(db,"league/playerOfMatch"),pomByMatch);renderPom();pop("Player of the Match saved")}catch(err){say("Could not save award: "+err.message,"bad")}}));
+ grid.querySelectorAll(".save-pom").forEach(btn=>btn.addEventListener("click",async()=>{
+  if(!isAdmin||!db){say("Please sign in as the authorised scorekeeper first.","bad");return}
+  const sel=document.getElementById(`pom-select-${btn.dataset.match}`);
+  const matchKey=String(btn.dataset.match);
+  const raw=sel?.value??"";
+  if(raw==="") { say("Please select a player before saving the award.","bad"); return; }
+  const id=Number(raw);
+  if(!Number.isInteger(id)||id<1||!playerRoster.some(p=>p.id===id)) { say("Invalid player selection. Refresh the page and choose a player again.","bad"); return; }
+  const nextAwards={};
+  Object.entries(pomByMatch||{}).forEach(([key,value])=>{const n=Number(value);if(Number.isInteger(n)&&n>0&&playerRoster.some(p=>p.id===n))nextAwards[key]=n;});
+  nextAwards[matchKey]=id;
+  try{
+   await set(ref(db,"league/playerOfMatch"),nextAwards);
+   pomByMatch=nextAwards;renderPom();pop("Player of the Match saved");
+  }catch(err){say("Could not save award: "+err.message,"bad")}
+ }));
  updateStatuses();
 }
 function standings(){
