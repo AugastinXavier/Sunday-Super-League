@@ -204,7 +204,7 @@ function renderTable(){
 }
 function updateStatuses(){/* Match status labels are rendered inside Match Centre cards. */}
 function updateStats(){document.getElementById("playedCount").textContent=String(matches.filter(m=>m.hg!==""&&m.ag!=="").length).padStart(2,"0")+" / 06"}
-function updateStatuses(){matches.forEach(m=>{const el=document.getElementById("status-"+m.id);if(!el)return;if(m.hg===""||m.ag===""){el.textContent="Awaiting result";el.style.color="";return}const h=+m.hg,a=+m.ag;el.textContent=h>a?m.home+" WON":h<a?m.away+" WON":"MATCH DRAWN";el.style.color=h===a?"#d9ff74":"#a7f36a"})}
+
 function renderPom(){
  const grid=document.getElementById("pomGrid");if(!grid)return;grid.innerHTML="";
  const awards=matches.filter(m=>isPlayed(m)&&pomByMatch[m.id]).map(m=>({match:m,player:playerRoster.find(p=>p.id===Number(pomByMatch[m.id]))})).filter(x=>x.player);
