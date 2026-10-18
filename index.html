@@ -116,6 +116,7 @@ footer{border-top:1px solid #493914;padding:24px 0 32px;margin-top:10px;color:va
 .digital-card-number{position:absolute;top:9px;left:9px;z-index:2;color:#111805;background:linear-gradient(135deg,#e7ffad,#b7f52a);padding:5px 8px;border-radius:5px;font-size:11px;font-weight:1000;box-shadow:0 2px 8px #0007}.digital-card-rating{position:absolute;top:8px;right:8px;z-index:2;color:#d9ff74;font-size:20px;line-height:1;font-weight:1000;text-shadow:0 2px 5px #000}
 .digital-card-photo-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(28px,4vw,52px);font-weight:1000;letter-spacing:.04em;color:#d9ff74;background:radial-gradient(circle at 50% 30%,#354d1d,#10160c 70%)}.digital-card-team{font-size:9px;letter-spacing:.13em;color:#c9ff52;font-weight:1000;margin:10px 0 1px}.digital-player-card h3{font-size:clamp(15px,1.3vw,20px);line-height:1.1;margin:3px 0 2px;overflow-wrap:anywhere;color:#efffc9;text-transform:uppercase}.digital-card-position{font-size:10px;color:#b9cba7}
 .digital-card-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:11px 0 8px}.digital-card-stats span{padding:7px 2px;border:1px solid #496126;border-radius:5px;background:#05090570;font-size:8px;color:#c6d5b8}.digital-card-stats strong{display:block;font-size:clamp(14px,1.4vw,20px);line-height:1.2;color:#b7f52a}.digital-card-award{min-height:22px;font-size:8px;font-weight:1000;letter-spacing:.08em;color:#d9ff74;display:flex;align-items:center;justify-content:center}.digital-card-season{font-size:8px;letter-spacing:.17em;color:#a9c58c;margin:2px 0 9px}.digital-card-actions{display:flex;gap:6px;margin-top:auto}.digital-card-actions button{flex:1;min-width:0;border:1px solid #496126;background:#111a0b;color:#eaffc2;border-radius:6px;padding:8px 4px;font-size:9px;font-weight:1000;cursor:pointer}.digital-card-actions button:first-child{background:linear-gradient(135deg,#e7ffad,#b7f52a);color:#111805;border-color:#d9ff74}.digital-card-actions button:hover{filter:brightness(1.12)}
+.weekly-awards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.weekly-award-panel{min-width:0;border:1px solid #354a24;border-radius:16px;padding:14px;background:linear-gradient(145deg,rgba(18,27,13,.96),rgba(5,8,5,.97))}.weekly-award-panel>h3{margin:0 0 12px;color:#d9ff74;font-size:15px}.weekly-award-panel .best-gk-wrap{grid-template-columns:1fr}.weekly-award-panel .best-gk-card{min-height:145px}.weekly-award-panel .best-gk-admin{margin-top:10px}@media(max-width:800px){.weekly-awards-grid{grid-template-columns:1fr}}
 .best-gk-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr);gap:14px;align-items:stretch}.best-gk-admin{border:1px solid #496126;border-radius:13px;background:linear-gradient(145deg,#151e12,#090d08);padding:15px}.best-gk-admin label{display:block;color:var(--muted);font-size:10px;font-weight:900;margin-bottom:7px}.best-gk-admin select{width:100%;padding:11px;border:1px solid #496126;border-radius:8px;background:#080d07;color:var(--text);margin-bottom:9px}.best-gk-card{display:flex;align-items:center;gap:15px;min-width:0;padding:16px;border:2px solid #b7f52a;border-radius:15px;background:linear-gradient(135deg,#1a2a10,#080d07 70%);box-shadow:0 10px 26px #0006}.best-gk-photo{width:100px;height:115px;flex:0 0 100px;object-fit:cover;object-position:center top;border-radius:10px;border:2px solid #b7f52a;background:#172111}.best-gk-card h3{margin:5px 0;color:#e7ffad;font-size:21px}.best-gk-label{font-size:9px;font-weight:1000;letter-spacing:.13em;color:#b7f52a}.best-gk-meta{font-size:11px;color:#b9cba7}.best-gk-empty{border:1px dashed #496126;border-radius:12px;padding:20px;color:var(--muted);font-size:12px}
 @media(max-width:800px){.digital-card-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.digital-card-photo-wrap{aspect-ratio:4/4.5}.best-gk-wrap{grid-template-columns:1fr}}
 @media(max-width:520px){.digital-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.digital-player-card{padding:7px;border-radius:14px}.digital-player-card h3{font-size:12px}.digital-card-team{font-size:7px}.digital-card-stats strong{font-size:13px}.digital-card-stats span{font-size:7px}.digital-card-actions button{font-size:8px;padding:7px 2px}.digital-card-rating{font-size:16px}.best-gk-photo{width:80px;height:95px;flex-basis:80px}.best-gk-card h3{font-size:17px}}
@@ -185,8 +186,11 @@ footer{border-top:1px solid #493914;padding:24px 0 32px;margin-top:10px;color:va
 <p class="note">Admins can select the award winner for each completed match. Add each player portrait as <code>images/players/player-name.jpg</code> (lowercase, hyphenated). The same photo appears in the team squad and POTM card.</p>
 <div class="pom-grid" id="pomGrid"></div></section>
 
-<section id="best-goalkeeper"><div class="section-head"><div><div class="kicker">Weekly individual award</div><h2>Best Goalkeeper of the Week</h2></div><p>One standout player selected from the full SSL player list.</p></div>
-<div class="best-gk-wrap"><div id="bestGoalkeeperCard" class="best-gk-empty">The Best Goalkeeper of the Week will be announced here.</div><div class="best-gk-admin" id="bestGoalkeeperAdmin" hidden><label for="bestGoalkeeperSelect">Choose the weekly award winner · any player from all four teams</label><select id="bestGoalkeeperSelect"><option value="">Choose a player…</option></select><button type="button" class="btn primary" id="saveBestGoalkeeperBtn">SAVE BEST GOALKEEPER OF THE WEEK</button><p class="admin-help" style="margin-top:8px">This is one weekly award, separate from the match-by-match Player of the Match awards.</p></div></div></section>
+<section id="best-goalkeeper"><div class="section-head"><div><div class="kicker">Weekly individual awards</div><h2>Weekly Awards</h2></div><p>One goalkeeper award and one overall player award each week.</p></div>
+<div class="weekly-awards-grid">
+ <div class="weekly-award-panel"><h3>🧤 Best Goalkeeper of the Week</h3><div class="best-gk-wrap"><div id="bestGoalkeeperCard" class="best-gk-empty">The Best Goalkeeper of the Week will be announced here.</div><div class="best-gk-admin" id="bestGoalkeeperAdmin" hidden><label for="bestGoalkeeperSelect">Choose any player from all four teams</label><select id="bestGoalkeeperSelect"><option value="">Choose a player…</option></select><button type="button" class="btn primary" id="saveBestGoalkeeperBtn">SAVE BEST GOALKEEPER</button></div></div></div>
+ <div class="weekly-award-panel"><h3>⭐ Best Player of the Week</h3><div class="best-gk-wrap"><div id="bestPlayerWeekCard" class="best-gk-empty">The Best Player of the Week will be announced here.</div><div class="best-gk-admin" id="bestPlayerWeekAdmin" hidden><label for="bestPlayerWeekSelect">Choose the overall standout player · any team</label><select id="bestPlayerWeekSelect"><option value="">Choose a player…</option></select><button type="button" class="btn primary" id="saveBestPlayerWeekBtn">SAVE BEST PLAYER OF THE WEEK</button></div></div></div>
+</div></section>
 
 
 <section id="auction"><div class="section-head"><div><div class="kicker">Squad draft · Season 2</div><h2>SSL Player Auction</h2></div><p>Run the auction, track team purses and build squads from the player pool.</p></div>
@@ -385,16 +389,19 @@ function renderPom(){
 }
 
 let bestGoalkeeperOfWeek=null;
-function renderBestGoalkeeper(){
- const card=document.getElementById('bestGoalkeeperCard'),select=document.getElementById('bestGoalkeeperSelect'),admin=document.getElementById('bestGoalkeeperAdmin');
+let bestPlayerOfWeek=null;
+function renderWeeklyAward({cardId,selectId,adminId,award,label,emptyText}){
+ const card=document.getElementById(cardId),select=document.getElementById(selectId),admin=document.getElementById(adminId);
  if(!card)return;
  if(admin)admin.hidden=!isAdmin;
- if(select){if(!select.dataset.ready){select.innerHTML='<option value="">Choose a player…</option>'+playerRoster.map(p=>`<option value="${p.id}">${p.name} · ${p.team}</option>`).join('');select.dataset.ready='true'}select.value=bestGoalkeeperOfWeek?.playerId?String(bestGoalkeeperOfWeek.playerId):''}
- const winner=playerRoster.find(p=>p.id===Number(bestGoalkeeperOfWeek?.playerId));
- if(!winner){card.className='best-gk-empty';card.textContent='The Best Goalkeeper of the Week will be announced here.';return}
+ if(select){if(!select.dataset.ready){select.innerHTML='<option value="">Choose a player…</option>'+playerRoster.map(p=>`<option value="${p.id}">${p.name} · ${p.team}</option>`).join('');select.dataset.ready='true'}select.value=award?.playerId?String(award.playerId):''}
+ const winner=playerRoster.find(p=>p.id===Number(award?.playerId));
+ if(!winner){card.className='best-gk-empty';card.textContent=emptyText;return}
  const profile=profileFor(winner),photo=profile.photoUrl||`images/players/${playerSlug(winner.name)}.jpg`;
- card.className='best-gk-card';card.innerHTML=`<img class="best-gk-photo" src="${photo}" alt="${winner.name}" onerror="this.style.display='none'"><div><div class="best-gk-label">🏆 SSL · BEST GOALKEEPER OF THE WEEK</div><h3>${winner.name}</h3><div class="best-gk-meta">${winner.team}</div><div class="best-gk-meta">Sunday Super League · Season 2</div></div>`;
+ card.className='best-gk-card';card.innerHTML=`<img class="best-gk-photo" src="${photo}" alt="${winner.name}" onerror="this.style.display='none'"><div><div class="best-gk-label">🏆 SSL · ${label.toUpperCase()}</div><h3>${winner.name}</h3><div class="best-gk-meta">${winner.team}</div><div class="best-gk-meta">Sunday Super League · Season 2</div></div>`;
 }
+function renderBestGoalkeeper(){renderWeeklyAward({cardId:'bestGoalkeeperCard',selectId:'bestGoalkeeperSelect',adminId:'bestGoalkeeperAdmin',award:bestGoalkeeperOfWeek,label:'Best Goalkeeper of the Week',emptyText:'The Best Goalkeeper of the Week will be announced here.'})}
+function renderBestPlayerOfWeek(){renderWeeklyAward({cardId:'bestPlayerWeekCard',selectId:'bestPlayerWeekSelect',adminId:'bestPlayerWeekAdmin',award:bestPlayerOfWeek,label:'Best Player of the Week',emptyText:'The Best Player of the Week will be announced here.'})}
 async function saveBestGoalkeeper(){
  if(!isAdmin||!db){say('Please sign in as scorekeeper first.','bad');return}
  const playerId=Number(document.getElementById('bestGoalkeeperSelect').value);
@@ -402,6 +409,14 @@ async function saveBestGoalkeeper(){
  const award={playerId,week:'Week 1',updatedAt:Date.now()};
  try{await set(ref(db,'league/bestGoalkeeperOfWeek'),award);bestGoalkeeperOfWeek=award;renderBestGoalkeeper();pop('Best Goalkeeper of the Week saved')}
  catch(e){say('Could not save weekly goalkeeper award: '+e.message,'bad')}
+}
+async function saveBestPlayerOfWeek(){
+ if(!isAdmin||!db){say('Please sign in as scorekeeper first.','bad');return}
+ const playerId=Number(document.getElementById('bestPlayerWeekSelect').value);
+ if(!playerRoster.some(p=>p.id===playerId)){say('Please choose a player from the list.','bad');return}
+ const award={playerId,week:'Week 1',updatedAt:Date.now()};
+ try{await set(ref(db,'league/bestPlayerOfWeek'),award);bestPlayerOfWeek=award;renderBestPlayerOfWeek();pop('Best Player of the Week saved')}
+ catch(e){say('Could not save weekly player award: '+e.message,'bad')}
 }
 
 function renderPlayerStats(){
@@ -458,7 +473,7 @@ async function auctionSell(){if(!isAdmin||!auctionState.currentPlayerId||!auctio
 async function auctionMarkUnsold(){if(!isAdmin||!auctionState.currentPlayerId)return;const id=Number(auctionState.currentPlayerId),player=auctionPlayer(id);if(!player)return;const unsold=[...new Set([...(auctionState.unsold||[]).map(Number),id])];await persistAuction({...auctionState,unsold,currentPlayerId:null,currentBid:0,currentTeam:'',status:'live'},`${player.name} marked unsold`)}
 async function auctionNext(){if(!isAdmin)return;const remaining=auctionAvailable();if(!remaining.length){await persistAuction({...auctionState,status:'complete',currentPlayerId:null,currentBid:0,currentTeam:''},'Auction complete');return}const selected=Number(document.getElementById('auctionPlayerSelect').value);if(selected&&remaining.some(p=>p.id===selected)){await openAuctionLot();return}document.getElementById('auctionPlayerSelect').value=String(remaining[0].id);await openAuctionLot()}
 
-function all(){renderSquads();renderFixtures();renderTable();updateStats();renderPlayerStats();renderPom();renderBestGoalkeeper();renderDigitalCards();renderAuction()}
+function all(){renderSquads();renderFixtures();renderTable();updateStats();renderPlayerStats();renderPom();renderBestGoalkeeper();renderBestPlayerOfWeek();renderDigitalCards();renderAuction()}
 function adminMode(v){isAdmin=v;document.getElementById("adminStudio").classList.toggle("hidden",!v);populateProfileEditor();document.getElementById("loginBtn").classList.toggle("hidden",v);document.getElementById("logoutBtn").classList.toggle("hidden",!v);document.getElementById("adminEmail").disabled=v;document.getElementById("adminPassword").disabled=v;all();document.getElementById("resetBtn").classList.toggle("hidden",!v)}
 document.getElementById("matchFilter").addEventListener("change",renderFixtures);document.getElementById("teamFilter").addEventListener("change",renderFixtures);
 document.getElementById("year").textContent=new Date().getFullYear();
@@ -520,6 +535,7 @@ async function drawPoster(m){const canvas=document.getElementById('posterCanvas'
 async function createMatchPoster(m){activePosterMatch=m;const modal=document.getElementById('posterModal');modal.querySelector('h3').textContent='SSL Matchday Poster · Match '+m.id;const extra=modal.querySelector('.profile-extra');if(extra)extra.remove();document.getElementById('posterCanvas').style.display='block';modal.querySelector('.admin-action-row').style.display='flex';document.getElementById('downloadPosterBtn').textContent='DOWNLOAD POSTER';document.getElementById('sharePosterBtn').style.display='';modal.classList.add('open');await drawPoster(m)}
 function openPosterFromAdmin(){const m=matches.find(x=>x.id===Number(document.getElementById('posterMatchSelect').value));if(m){m.scorers=document.getElementById('posterScorers').value.trim();createMatchPoster(m)}}
 document.getElementById('saveBestGoalkeeperBtn').addEventListener('click',saveBestGoalkeeper);
+document.getElementById('saveBestPlayerWeekBtn').addEventListener('click',saveBestPlayerOfWeek);
 document.getElementById('profilePlayer').addEventListener('change',()=>{const p=playerRoster.find(x=>x.id===Number(document.getElementById('profilePlayer').value));if(p)loadProfileFields(p)});
 document.getElementById('profilePhoto').addEventListener('change',()=>{const file=document.getElementById('profilePhoto').files[0],preview=document.getElementById('profilePreview');if(file){preview.src=URL.createObjectURL(file);preview.classList.remove('hidden')}});
 document.getElementById('playerCardTeamFilter').addEventListener('change',renderDigitalCards);document.getElementById('playerCardSort').addEventListener('change',renderDigitalCards);
@@ -536,7 +552,8 @@ if(!configured){document.getElementById("resetBtn").classList.add("hidden");say(
 onValue(ref(db,"league/playerStats"),()=>{recalculateLeagueStats();renderPlayerStats();renderDigitalCards()},err=>say("Player stats connection failed: "+err.message,"bad"));
 onValue(ref(db,"league/playerOfMatch"),snap=>{pomByMatch=snap.val()||{};renderPom();renderFixtures();renderDigitalCards()},err=>say("Player of the Match connection failed: "+err.message,"bad"));
 onValue(ref(db,"league/bestGoalkeeperOfWeek"),snap=>{bestGoalkeeperOfWeek=snap.val()||null;renderBestGoalkeeper()},err=>say("Best goalkeeper award connection failed: "+err.message,"bad"));
-onValue(ref(db,"league/playerProfiles"),snap=>{playerProfiles=snap.val()||{};renderSquads();renderPom();renderDigitalCards();renderBestGoalkeeper();populateProfileEditor()},err=>say("Player profile connection failed: "+err.message,"bad"));
+onValue(ref(db,"league/bestPlayerOfWeek"),snap=>{bestPlayerOfWeek=snap.val()||null;renderBestPlayerOfWeek()},err=>say("Best player award connection failed: "+err.message,"bad"));
+onValue(ref(db,"league/playerProfiles"),snap=>{playerProfiles=snap.val()||{};renderSquads();renderPom();renderDigitalCards();renderBestGoalkeeper();renderBestPlayerOfWeek();populateProfileEditor()},err=>say("Player profile connection failed: "+err.message,"bad"));
 onValue(ref(db,'league/auction'),snap=>{const data=snap.val();if(data&&typeof data==='object'){auctionState={...auctionDefault(),...data};renderAuction()}},err=>say('Auction sync failed: '+err.message,'bad'));
 onAuthStateChanged(auth,user=>{adminMode(!!user);say(user?"Signed in as scorekeeper. Changes sync to everyone.":"Live scores are public. Sign in to edit.","good")})}catch(e){say("Firebase configuration error: "+e.message,"bad")}}
 </script>
